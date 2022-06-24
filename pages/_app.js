@@ -2,9 +2,10 @@ import React from 'react'
 import App from 'next/app'
 import { createGlobalStyle } from 'styled-components'
 import normalize from 'styled-normalize'
-
+import {wrapper} from "../store/store"
 //
-
+import { Provider } from "react-redux";
+import {makeStore} from "../store/store"
 const GlobalStyles = createGlobalStyle`
   ${normalize};
   html, body, body, [data-reactroot] {
@@ -26,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-export default class MyApp extends App {
+ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
 
@@ -38,3 +39,4 @@ export default class MyApp extends App {
     )
   }
 }
+export default wrapper.withRedux(MyApp)

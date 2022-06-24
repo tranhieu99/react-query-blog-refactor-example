@@ -1,7 +1,7 @@
 import db from '../../../db'
 import { sleep } from '../../../utils'
 
-const failureRate = 0.5
+const failureRate = 2
 
 export default async (req, res) => {
   await sleep(500)
